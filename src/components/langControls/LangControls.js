@@ -1,13 +1,14 @@
 import React from 'react'
 import LanguageContext from './../../LanguageContext';
 
-export default function LangControls() {
+export default function LangControls(props) {
   return (
     <LanguageContext.Consumer>
       {(value) => {
         return (
           <>
             <button
+              onClick={() => props.onSetLang('en-GB')}
               disabled={value.lang === 'en-GB'}
             >
               British{' '}
@@ -15,6 +16,7 @@ export default function LangControls() {
             </button>
             {' '}
             <button
+              onClick={() => props.onSetLang('en-US')}
               disabled={value.lang === 'en-US'}
             >
               American{' '}
@@ -22,6 +24,7 @@ export default function LangControls() {
             </button>
             {' '}
             <button
+              onClick={() => props.onSetLang('ko')}
               disabled={value.lang === 'ko'}
             >
               Korean{' '}
