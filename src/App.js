@@ -14,7 +14,8 @@ export class App extends Component {
   
   render(){
     const contextValue = {
-      lang: this.state.lang
+      lang: this.state.lang,
+      setLang: this.handleSetLang
     }
     return (
       <LanguageContext.Provider
